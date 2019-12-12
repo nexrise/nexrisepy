@@ -68,6 +68,38 @@ div.panel {
 <div class="content">
 <h1>EVENTS</h1>
 
+
+
+
+{% for article in articles %}
+
+
+<button class="accordion">
+<a>{{ article.title }}</a>
+</button>
+<div class="panel">
+<p>{{ article.date }}</p>
+<p>{{ article.heading1 }}</p>
+<div class="btnhr button"><a href="{% url 'article_detail' slug=article.slug %}" type="button">click here</a></div>
+</div>
+
+
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <button class="accordion">
 <a>Nex-Inventive #Tunisia - 2020</a>
 </button>
@@ -223,7 +255,7 @@ div.panel {
 	<li>Travel and Tourism Summit – Kingdom of Bahrain 2020</li>
 	<li>Teaching, Education and Learning Conference – Sultanate of Oman 2020</li>
 </div>
-
+-->
 
 </div>
 

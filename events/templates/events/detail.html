@@ -6,20 +6,59 @@
 
 #event {background-color:rgb(238, 110, 18);}
 
+
+.block1 {width:100%; height:calc(100vh - 125px); overflow:hidden; background-image:url(../media/{{ article.img }}); background-position:center; background-size:100% auto; position:relative;}
+
+.block2 {box-sizing:border-box; border:20px solid white; display:block; width:calc(100% - 400px); overflow:hidden; float:left;}
+
+.slideleft, .slideright {display:block; height:100vh; width:200px; float:left; box-sizing:border-box; border:1px solid black;}
+
+h1, h2, h3 {text-align:center;}
+h2 {margin-top:80px;}
+.block3 {width:80%; display:block; margin:auto;}
 {% endblock %}
 
 
 
 {% block body %}
 
-<div class="article-detail">
-<div class="article">
-<h2>{{ article.title }}</h2>
-<p>{{ article.date }}</p>
-<p>{{ article.heading1 }}</p>
+<div class="block1"></div>
+
+<div class="container">
+
+<div class="slideleft">
+</div>
+
+
+
+<div class="block2">
+<h1>{{ article.title }}</h1>
+<h3>{{ article.title2 }}</h3>
+<h3>{{ article.title3 }}</h3>
+
+
+<h2>{{ article.heading1 }}</h2>
 <p>{{ article.body1 }}</p>
+
+
+
+<h2>{{ article.heading2 }}</h2>
+<p>{{ article.body2 }}</p>
+
+
 </div>
+
+<div class="slideright">
 </div>
+
+</div>
+
+
+<div class="block3">
+<h2>{{ article.heading3 }}</h2>
+<p>{{ article.body3 }}</p>
+</div>
+
 
 
 {% endblock %}

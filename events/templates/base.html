@@ -65,20 +65,18 @@
 <a id='event' href='{% url "events" %}'>Events</a>
 <div id='togglee' class='a dropdown-content'>
 
-<a href='ce19.html'>Nex Inventive #Tunisia - 2020<br>26 April 2020 | Tunis Grand Hotel<br>Tunis - Tunisia</a>
-<a href='{% url "article" %}'>#IFF - 2020<br>25 & 26 AUGUST 2020 | Sofitel Phillipines Plaza Manila<br>Manila - Philippines</a>
-<a href='ce17.html'>NEX-INVENTIVE GLOBAL<br>2019 & 2020</a>
-<a href='ce16.html'>NEX-INVENTIVE #QATAR<br>AUGUST 28, 2019 | SHERATON GRAND DOHA<br>DOHA - QATAR</a>
-<a href='ce15.html'>EDU-LEARN'19 - PUNE<br>AUGUST 02, 2019 | Radisson Blu Hotel<br>PUNE - INDIA</a>
-<a href='ce14.html'>The Education Fair - Chennai 2019<br>JULY 18 & 19, 2019 | Hilton Chennai<br>Chennai - INDIA</a>
-<a href='ce13.html'>NATIONAL CONFERENCE ON EDUCATIONAL TECHNOLOGY - BANGALORE 2019<br>Postponed<br>BANGALORE - INDIA</a>
-<a href='ce10.html'>KINGDOM EDUCATIONAL SUMMIT 2019<br>April 04, 2019 | Gulf Hotel<br>Kingdom of Bahrain</a>
-<a href='ce9.html'>AUGMENTED AND VIRTUAL REALITY 2019<br>APRIL 17 & 18, 2019 | THE RITZ CARLTON<br>DUBAI - UNITED ARAB EMIRATES</a>
-<a href='ce6.html'>TEACHING AND LEARNING CONCLAVE 2019<br>February 14-15, 2019 | Radisson Blu Hotel<br>Addis Ababa - Ethiopia</a>	
-<a href='ce4.html'>Learning and Development Conclave<br>2019<br>Hilton Chennai | Chennai</a>
-<a href='ce1.html'>Project Management and Leadership Expo<br>2019<br>Zurich, Switzerland</a>
-<a href='events.html'>UPCOMING EVENTS</a>
-<a href='#'></a>
+
+
+
+{% for article in articles %}
+
+<a href="{% url 'article_detail' slug=article.slug %}">{{ article.title }}</a>
+
+{% endfor %}
+
+
+
+
 </div>
 </li>
 
