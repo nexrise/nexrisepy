@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'owqn!xbqm4g@r^e!j)@6s$lctl@q^y_fg$z&_nm@i_^u3vaim^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['3.15.180.204', 'myevents.cf', '127.0.0.1',]
 
