@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from .models import Article
 
 # Create your views here.
-from django.http import HttpResponse
+
 
 
 def index(request):
@@ -15,3 +17,15 @@ def events(request):
 
 def contacts(request):
 	return render(request, 'events/contacts.html')
+
+def article(request):
+	return render(request, 'events/article.html')
+
+def test(request):
+	articles = Article.objects.all().order_by('date')
+	return render(request, 'events/test.html', {'articles':articles})
+
+def article_detail(request, slug):
+	# return HttpResponse(slug)
+	article = Article.objects.get(slug=slug)
+	return render(request, 'events/detail.html', {'article':article})

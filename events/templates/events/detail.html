@@ -1,0 +1,26 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+
+
+#event {background-color:rgb(238, 110, 18);}
+
+{% endblock %}
+
+
+
+{% block body %}
+
+<div class="article-detail">
+<div class="article">
+<h2>{{ article.title }}</h2>
+<p>{{ article.date }}</p>
+<p>{{ article.heading1 }}</p>
+<p>{{ article.body1 }}</p>
+</div>
+</div>
+
+
+{% endblock %}
+
