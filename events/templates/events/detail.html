@@ -7,15 +7,39 @@
 #event {background-color:rgb(238, 110, 18);}
 
 
-.block1 {width:100%; height:calc(100vh - 125px); overflow:hidden; background-image:url(../media/{{ article.img }}); background-position:center; background-size:100% auto; position:relative;}
+.block1 {width:100%; height:calc(100vh - 125px); overflow:hidden; background-image:url(../media/{{ article.img }}); background-position:center; background-size:100% auto; position:relative;background-repeat: no-repeat; background-color:black;}
 
-.block2 {box-sizing:border-box; border:20px solid white; display:block; width:calc(100% - 400px); overflow:hidden; float:left;}
+.block2 {box-sizing:border-box; border-width:20px 200px; border-style:solid; border-color:white; display:block; width:100%; overflow:hidden; float:left; background-color:white;}
 
-.slideleft, .slideright {display:block; height:100vh; width:200px; float:left; box-sizing:border-box; border:1px solid black;}
 
 h1, h2, h3 {text-align:center;}
 h2 {margin-top:80px;}
-.block3 {width:80%; display:block; margin:auto;}
+.block3 {width:100%; display:block; background-color:white; box-sizing:border-box; border-width:20px 200px 20px 200px; border-style: solid; border-color:white; margin-top:150px;}
+
+body {background-image: url('{% static 'img/d2.jpg' %}'); background-repeat: no-repeat; background-attachment: fixed; background-size:auto 100%; background-position:center;}
+
+header {background-color:white;}
+
+@media only screen and (max-width: 700px) {
+.block1 {height:200px;}
+.block2 {border-width:20px;}
+.block3 {border-width:20px}
+}
+
+
+.block6 {background-color:white;}
+.block6>.container {width:100%; margin:auto; overflow:hidden;  }
+.block6 p {font-size: 18px; font-weight: bold; color: #125687;text-align:center;}
+.slidecontain {width:80%; height:200px; display:block; overflow:hidden; margin:auto; background-color:white;}
+.slide { height:200px; width:calc(224px * 13);}
+.slide>img { float:left; border:2px solid #ccc; margin:0px 10px; background: #f6f6f6; display:block; width:200px; height:200px;}
+.leftslide {animation-name:slider; animation-duration:20s; float:left;animation-iteration-count: infinite;animation-timing-function: linear;}
+@keyframes slider {
+from {margin-left:0px;}
+to {margin-left:calc(224px * -13);}
+}
+.slide:hover {animation-play-state: paused;}
+
 {% endblock %}
 
 
@@ -25,9 +49,6 @@ h2 {margin-top:80px;}
 <div class="block1"></div>
 
 <div class="container">
-
-<div class="slideleft">
-</div>
 
 
 
@@ -48,8 +69,6 @@ h2 {margin-top:80px;}
 
 </div>
 
-<div class="slideright">
-</div>
 
 </div>
 
@@ -59,7 +78,42 @@ h2 {margin-top:80px;}
 <p>{{ article.body3 }}</p>
 </div>
 
-
-
+<div id="logo" class="block6">
+<div class='container'>
+<p>Our Speakers</p>
+</div>
+<div class='slidecontain'>
+<div class='slide leftslide'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+</div>
+<div class='slide'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+</div>
+</div>
+</div>
 {% endblock %}
 
