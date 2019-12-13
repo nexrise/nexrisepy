@@ -2,43 +2,60 @@
 {% load static %}
 
 {% block style %}
-
-
+header {background-color:white;}
+body {background-image: url('{% static 'img/d2.jpg' %}'); background-repeat: no-repeat; background-attachment: fixed; background-size:auto 100%; background-position:center;}
 #event {background-color:rgb(238, 110, 18);}
 
-
-.block1 {width:100%; height:calc(100vh - 125px); overflow:hidden; background-image:url(../media/{{ article.img }}); background-position:center; background-size:100% auto; position:relative;background-repeat: no-repeat; background-color:black;}
-
-.block2 {box-sizing:border-box; border-width:20px 200px; border-style:solid; border-color:white; display:block; width:100%; overflow:hidden; float:left; background-color:white;}
+h1, h2, h3 {text-align:center; }
+h2 {margin-top:50px;}
 
 
-h1, h2, h3 {text-align:center;}
-h2 {margin-top:80px;}
+.block {width:100%; height:calc(100vh - 125px); overflow:hidden; background-image:url(../media/{{ article.img }}); background-position:center; background-size:100% auto; position:relative;background-repeat: no-repeat; background-color:black;}
+
+
+
+.block1 {box-sizing:border-box; border-width:20px 200px; border-style:solid; border-color:white; display:block; width:100%; overflow:hidden; float:left; background-color:white;}
+
+
+
+.sponser {display:block; width:80%; margin:auto; background-color:white;}
+
+
+
+.block2 {width:100%; display:block; background-color:white; box-sizing:border-box; border-width:20px 200px 20px 200px; border-style: solid; border-color:white; margin-top:0px;}
+
+
+
+
 .block3 {width:100%; display:block; background-color:white; box-sizing:border-box; border-width:20px 200px 20px 200px; border-style: solid; border-color:white; margin-top:150px;}
 
-body {background-image: url('{% static 'img/d2.jpg' %}'); background-repeat: no-repeat; background-attachment: fixed; background-size:auto 100%; background-position:center;}
-
-header {background-color:white;}
-
-@media only screen and (max-width: 700px) {
-.block1 {height:200px;}
-.block2 {border-width:20px;}
-.block3 {border-width:20px}
-}
 
 
-.block6 {background-color:white;}
-.block6>.container {width:100%; margin:auto; overflow:hidden;  }
-.block6 p {font-size: 18px; font-weight: bold; color: #125687;text-align:center;}
+.speaker {background-color:white; display:block; overflow:hidden;}
+.speaker>.container {width:100%; margin:auto; overflow:hidden;  }
+.speaker p {font-size: 18px; font-weight: bold; color: #125687;text-align:center;}
 .slidecontain {width:80%; height:200px; display:block; overflow:hidden; margin:auto; background-color:white;}
-.slide { height:200px; width:calc(224px * 13);}
+.slide { height:200px; width:calc(224px * 6);}
 .slide>img { float:left; border:2px solid #ccc; margin:0px 10px; background: #f6f6f6; display:block; width:200px; height:200px;}
-.leftslide {animation-name:slider; animation-duration:20s; float:left;animation-iteration-count: infinite;animation-timing-function: linear;}
+.leftslide {animation-name:slider; animation-duration:10s; float:left;animation-iteration-count: infinite;animation-timing-function: linear;}
 @keyframes slider {
 from {margin-left:0px;}
-to {margin-left:calc(224px * -13);}
+to {margin-left:calc(224px * -6);}
 }
 .slide:hover {animation-play-state: paused;}
+
+
+
+.block4 {width:100%; display:block; background-color:white; box-sizing:border-box; border-width:100px 200px 20px 200px; border-style: solid; border-color:white; margin-top:0px;}
+
+
+
+
+@media only screen and (max-width: 700px) {
+.block {height:200px;}
+.block1, .block2, .block3, .block4, .sponser {border-width:20px; width:100%;}
+
+}
 
 {% endblock %}
 
@@ -46,75 +63,92 @@ to {margin-left:calc(224px * -13);}
 
 {% block body %}
 
-<div class="block1"></div>
+<div class="block"></div>
+
+
 
 <div class="container">
+<div class="block1">
+<h1>{{ article.title }}</h1>
+<h3>{{ article.title2 }}</h3>
+<h3>{{ article.title3 }}</h3>
+<h2>{{ article.heading1 }}</h2>
+{{ article.body1 | safe }}
+</div>
+</div>
+
+
+
+
+<div class="sponser">
+<div class='container'>
+<h2>SPONSERS</h2>
+</div>
+<div class=''>
+<img src='http://via.placeholder.com/200' alt='image'>
+<img src='http://via.placeholder.com/200' alt='image'>
+<img src='http://via.placeholder.com/200' alt='image'>
+<img src='http://via.placeholder.com/200' alt='image'>
+</div>
+</div>
 
 
 
 <div class="block2">
-<h1>{{ article.title }}</h1>
-<h3>{{ article.title2 }}</h3>
-<h3>{{ article.title3 }}</h3>
-
-
-<h2>{{ article.heading1 }}</h2>
-<p>{{ article.body1 }}</p>
-
-
-
+{{ article.body2 | safe }}
 </div>
 
-
-</div>
 
 
 <div class="block3">
-
-<h2>{{ article.heading2 }}</h2>
-<p>{{ article.body2 }}</p>
-
-
-<h2>{{ article.heading3 }}</h2>
-<p>{{ article.body3 }}</p>
+{{ article.body3 | safe }}
 </div>
 
-<div id="logo" class="block6">
+
+
+
+<div id="logo" class="speaker">
 <div class='container'>
 <p>Our Speakers</p>
 </div>
 <div class='slidecontain'>
 <div class='slide leftslide'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='{{ article.speaker1 }}' alt='image'>
+<img src='{{ article.speaker2 }}' alt='image'>
+<img src='{{ article.speaker3 }}' alt='image'>
+<img src='{{ article.speaker4 }}' alt='image'>
+<img src='{{ article.speaker5 }}' alt='image'>
+<img src='{{ article.speaker6 }}' alt='image'>
 </div>
 <div class='slide'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
-<img src='https://imgplaceholder.com/200x200/cccccc/757575/glyphicon-user' alt='image'>
+<img src='{{ article.speaker1 }}' alt='image'>
+<img src='{{ article.speaker2 }}' alt='image'>
+<img src='{{ article.speaker3 }}' alt='image'>
+<img src='{{ article.speaker4 }}' alt='image'>
+<img src='{{ article.speaker5 }}' alt='image'>
+<img src='{{ article.speaker6 }}' alt='image'>
 </div>
 </div>
 </div>
+
+
+
+<div class="block4">
+{{ article.body4 | safe }}
+</div>
+
+
+
+
+
+<script>
+
+setTimeout(function(){
+
+
+},2000); 
+
+</script>
+
 {% endblock %}
 

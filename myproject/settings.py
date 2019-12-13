@@ -20,8 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open('/home/ubuntu/key/nexrisepy/key') as f:
-    SECRET_KEY = f.read().strip()
+try:
+    with open('/home/ubuntu/key/nexrisepy/key') as f:
+        SECRET_KEY = f.read().strip()
+except:
+    with open('C:/Users/msbar/Documents/git/nexrisepy.txt') as f:
+        SECRET_KEY = f.read().strip()
+
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
