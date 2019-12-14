@@ -10,7 +10,7 @@ h1, h2, h3 {text-align:center; }
 h2 {margin-top:50px;}
 
 
-.block {width:100%; height:calc(100vh - 125px); overflow:hidden; background-image:url(../media/{{ article.img }}); background-position:center; background-size:100% auto; position:relative;background-repeat: no-repeat; background-color:black;}
+.block {width:100%; height:calc(100vh - 125px); overflow:hidden; background-image:url({{ article.img.url }}); background-position:center; background-size:100% auto; position:relative;background-repeat: no-repeat; background-color:black;}
 
 
 
@@ -113,20 +113,20 @@ to {margin-left:calc(224px * -6);}
 </div>
 <div class='slidecontain'>
 <div class='slide leftslide'>
-<img src='{{ article.speaker1 }}' alt='image'>
-<img src='{{ article.speaker2 }}' alt='image'>
-<img src='{{ article.speaker3 }}' alt='image'>
-<img src='{{ article.speaker4 }}' alt='image'>
-<img src='{{ article.speaker5 }}' alt='image'>
-<img src='{{ article.speaker6 }}' alt='image'>
+<img src='{{ article.speaker1.url }}' alt='image'>
+<img src='{{ article.speaker2.url }}' alt='image'>
+<img src='{{ article.speaker3.url }}' alt='image'>
+<img src='{{ article.speaker4.url }}' alt='image'>
+<img src='{{ article.speaker5.url }}' alt='image'>
+<img src='{{ article.speaker6.url }}' alt='image'>
 </div>
 <div class='slide'>
-<img src='{{ article.speaker1 }}' alt='image'>
-<img src='{{ article.speaker2 }}' alt='image'>
-<img src='{{ article.speaker3 }}' alt='image'>
-<img src='{{ article.speaker4 }}' alt='image'>
-<img src='{{ article.speaker5 }}' alt='image'>
-<img src='{{ article.speaker6 }}' alt='image'>
+<img src='{{ article.speaker1.url }}' alt='image'>
+<img src='{{ article.speaker2.url }}' alt='image'>
+<img src='{{ article.speaker3.url }}' alt='image'>
+<img src='{{ article.speaker4.url }}' alt='image'>
+<img src='{{ article.speaker5.url }}' alt='image'>
+<img src='{{ article.speaker6.url }}' alt='image'>
 </div>
 </div>
 </div>

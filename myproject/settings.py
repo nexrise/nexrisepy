@@ -31,7 +31,7 @@ except:
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 #DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['3.15.180.204', 'myevents.cf', '127.0.0.1',]
