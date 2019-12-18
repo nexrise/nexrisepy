@@ -2,63 +2,6 @@
 {% load static %}
 
 {% block style %}
-/* CONTENT */
-
-body {font: 300 normal 15px/1.4 Raleway,sans-serif;letter-spacing: .05em;}
-
-.firstblock {background-color:#ee6e12;border:0;margin-top:10px;color:white;}
-.center {height:439px; width:100%; background-position:center center;background-repeat:no-repeat;margin:auto;background-size: cover; }
-.secondblock {background-color:#626262;color:white;border:0;margin-top:10px;margin-bottom:10px;}
-
-.col-sm-6 {padding:0;}
-.col-sm-6>p,h2 {padding:10px 40px;text-align: justify;font-weight: 500;letter-spacing: .05em;}
-
-
-.border {border:0.1px solid;}
-
-h1 {padding-left:20px;}
-.contact {border:.5px solid; margin:10px 10px 0 10px; border-radius:10px; background-color:#fdf9f9;}
-.contact p{padding:5px 5px 5px 20px;}
-.call::before {background-image:url('{% static "img/call2.png" %}');background-size: 25px 25px; display:inline-block; width: 25px; height: 25px; content:"";padding-right:8px;background-repeat:no-repeat;}
-.mail::before {background-image:url('{% static "img/mail2.png" %}');background-size: 25px 25px; display:inline-block; width: 25px; height: 25px; content:""; padding-right:8px;background-repeat:no-repeat;}
-.designation::before {background-image:url('{% static "img/man2.png" %}');background-size: 25px 25px; display:inline-block; width: 25px; height:25px; content:""; padding-right:8px; background-repeat:no-repeat;}
-.addrblock {width:100%; background-color:#52575b; color:#fff; margin:auto; margin-top:20px; box-sizing: border-box;
-    padding: 10px;}
-
-.mapcontain {max-width:600px;  margin:auto; margin-top:20px;}
-.map {max-width:650px;width:100%;height:250px;border:0;}
-
-
-.mailbox {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-#contact {background-color:rgb(238, 110, 18);}
 
 
 {% endblock %}
@@ -66,78 +9,38 @@ input[type=submit]:hover {
 
 
 {% block body %}
-<h1>Contact-Us</h1>
 
-<div class="container" style="border:0;">
-
-<div class="col-sm-6">
-<div class="contact">
-<h2>Muhammed Khobaib</h2>
-
-<!-- <p class="call">00973-33217569</p> -->
-<!-- <p class="call">+91-9035442545</p> -->
-<p class="mail">muhammed@nexrise-events.com</p>
-<p class="designation">Founder and Chief Executive Officer</p>
-</div>
-</div>
-
-<div class="col-sm-6">
-<!-- <div class="contact">
-<h2>Mohammed Akmal</h2>
-
-<p class="call">00973-34371534</p>
-<p class="call">+91-9886878682</p>
-<p class="mail">akmal@nexrise-events.com</p>
-<p class="designation">Senior Project Manager & General Manager</p>
-</div> -->
-</div>
-
-</div>
-
-<div class="addrblock">
-Bahrain
-</div>
-
-
-<div class="container" style="border:0; background-color:#f2f2f2;">
-<div class="col-sm-6">
-
-
-<div class="mapcontain">
-<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d337.0537260719575!2d50.53454927714327!3d26.240215671267755!2m3!1f90!2f39.41789957698271!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x0%3A0xa9598925b58eb298!2sACT+Pro+Consultancy+%26+Business+Services!5e1!3m2!1sen!2sin!4v1509918581144" frameborder="0" style="border:0" allowfullscreen></iframe>
-<p class="call">
-00973-33217569</p>
-<p class="mail">info@nexrise-events.com
-</p>
-</div>
-
-
-</div>
-
-<div class="col-sm-6 mailbox">
-
-  <form action="http://free.allforms.mailjol.net/u/b82b72fa.php" method="post">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="Bahrain">Bahrain</option>
-      <option value="UAE">UAE</option>
-      <option value="Saudi Arabia">Saudi Arabia</option>
-      <option value="Oman">Oman</option>
-    </select>
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" name="submit" value="Submit">
-  </form>
-
-</div>
-</div>
+    <div>
+        <div class="container" style="margin-top: 24px;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Muhammed Khobaib<br></h4>
+                            <h6 class="text-muted card-subtitle mb-2">Founder and Chief Executive Officer<br></h6>
+                            <p class="card-text" style="margin-top: 20px;"><i class="icon ion-email" style="font-size: 30px;color: rgb(255,0,0);line-height: 0em;"></i>&nbsp; muhammed@nexrise-events.com<br></p>
+                            <p class="card-text"><i class="icon ion-android-call" style="font-size: 30px;color: rgb(255,0,0);line-height: 0em;"></i>&nbsp;&nbsp;<strong>+91-9945614517</strong><br></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form method="post">
+                        <h2 class="text-center">Contact us</h2>
+                        <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name"></div>
+                        <div class="form-group"><input class="form-control is-invalid" type="email" name="email" placeholder="Email"><small class="form-text text-danger">Please enter a correct email address.</small></div>
+                        <div class="form-group"><textarea class="form-control" name="message" placeholder="Message" rows="14"></textarea></div>
+                        <div class="form-group"><button class="btn btn-primary" type="submit">send </button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="map-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Location </h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+            </div>
+        </div><iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBlylSX5GWGPFBzdadiBC7TCC-t5V-tgZA&amp;q=Bahrain+act+pro+consultancy&amp;zoom=15" width="100%" height="450"></iframe></div>
 
 {% endblock %}

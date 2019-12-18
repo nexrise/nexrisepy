@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>NexRise Events</title>
+	<link rel="icon" href="events/img/fav-icon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="events/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="events/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="events/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="events/css/Article-List.css">
+    <link rel="stylesheet" href="events/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="events/css/Footer-Dark.css">
+    <link rel="stylesheet" href="events/css/Map-Clean.css">
+    <link rel="stylesheet" href="events/css/styles.css">
+
+<style>
+
+.slidecontainer {background-color:black;}
+.carouselcontainer {display:block; overflow:hidden; margin:auto; background-color:black; position:relative;}
+.carouselcontainer h2 {color:white; text-align:center;}
+.mycarousel {margin-left:0px; transition:all 1s;}
+.box {float:left; display:block; width:250px; overflow:hidden;}
+.box>img {padding:10px;}
+.box>h3 {text-align:center; color:white;}
+.carouselcontrol { height: 40px; width: 40px; border: 4px solid #FFFFFF; border-radius: 23px; position: absolute; font-size: 20px; color: #fff; text-align: center; text-shadow: 0 1px 2px rgba(0,0,0,.6); filter: alpha(opacity=50); opacity: .5;text-decoration: none; background-color:#222222; top:calc(50% - 20px);  box-sizing: border-box; cursor:pointer;}
+.left {left:-5px;}
+.right {right:-5px;}
+
+</style>
+
+</head>
+
+<body>
+ 
+
+<header>
+        <div class="d-flex" style="height: 100px;"><img src="events/img/logoeng.png" style="height: 100px;">
+            <div class="d-none d-md-flex" style="margin-left: auto;">
+                <div>
+                    <p style="margin-bottom: -10px;margin-top: 16px;font-size: 22px;">Contact Us</p>
+                    <p style="margin-right: 26px;color: #ee6e12;font-size: 26px;"><strong>+91-9945614517</strong><br></p>
+                </div><img src="events/img/logoarb.png" style="height: 100px;"></div>
+        </div>
+    </header>
+<nav class="navbar navbar-dark navbar-expand-md sticky-top bg-dark">
+        <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav" style="margin: 0px auto;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url "index">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url "about">About Us</a></li>
+                    
+					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="{% url "events">Events</a>
+                        <div class="dropdown-menu" role="menu">
+							<a class="dropdown-item" role="presentation" href="{% url "events">All Events</a>
+						{% for article in articles %}
+						
+							<a class="dropdown-item" role="presentation" href="{% url 'article_detail' slug=article.slug %}">{{ article.title }}</a>
+						
+						{% endfor %}
+												
+						</div>
+                    </li>
+                    
+					<li class="nav-item" role="presentation"><a class="nav-link" href="{% url "contacts">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+<div class="slidecontainer">
+<div id="carouselcontainer" class="carouselcontainer">
+<a onclick="prev()" class="left carouselcontrol">‹</a>
+<a onclick="next()" class="right carouselcontrol">›</a>
+<h2>Speakers</h2>
+<div id="mycarousel" class="mycarousel">
+<div class="box">
+<img src="http://via.placeholder.com/250x250/FF0000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/FF0000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/FF0000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/0000FF" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/0000FF" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/0000FF" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/008000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/008000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/008000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/000000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/000000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/000000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Event Managment</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Links</h3>
+                        <ul>
+                            <li><a href="{% url "index">Home</a></li>
+                            <li><a href="{% url "about">About Us</a></li>
+                            <li><a href="{% url "events">Events</a></li>
+                            <li><a href="{% url "contacts">Contant Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Nexrise Events</h3>
+                        <p>Flat:91, Building:205, Road:2803,<br>Block:42, Al Seef.<br>Kingdom of Bahrain,<br>Mobile:+91-9739545678<br>Email: info@nexrise-events.com<br></p>
+                    </div>
+                    <div class="col item social"><a class="name"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="www.linkedin.com/company/13428478/"><i class="icon ion-social-linkedin-outline ion-social-linkedin"></i></a></div>
+                </div>
+                <p class="copyright">Nexrise Events © 2020</p>
+            </div>
+        </footer>
+    </div>
+    <script src="events/js/jquery.min.js"></script>
+    <script src="events/bootstrap/js/bootstrap.min.js"></script>
+    <script src="events/js/bs-init.js"></script>
+<script>
+var slideimg = 3;
+if (window.matchMedia("(max-width: 758px)").matches) {slideimg = 1;} else {console.log("desktop");};
+console.log(slideimg);
+var numberofimg = document.getElementById('mycarousel').children.length;
+var boxwidth = document.getElementById('mycarousel').firstElementChild.clientWidth;
+var caroContainSize = (numberofimg * boxwidth);
+document.getElementById('mycarousel').style.width = caroContainSize + "px";
+
+var currentwidth = (boxwidth * slideimg);
+document.getElementById('carouselcontainer').style.width = currentwidth + "px";
+
+var totalslides = caroContainSize / currentwidth;
+var slidenumber = 0;
+var count = 0;
+
+function prev(){
+slidenumber--;
+if (slidenumber == -1) {slidenumber = totalslides - 1; console.log("reset done -"+ slidenumber);}
+console.log("clicked prev - "+ "and width set to "+ slidenumber);
+move();
+}
+
+function next(){
+slidenumber++;
+if (slidenumber == totalslides) {slidenumber = 0; console.log("reset done -"+ slidenumber);}
+move();
+console.log("clicked next - "+ "and width set to "+ slidenumber);
+}
+
+function move() {
+var setmargin = slidenumber * currentwidth;
+document.getElementById("mycarousel").style.marginLeft = -setmargin + "px";
+}
+
+</script>
+
+</body>
+</html>

@@ -2,60 +2,16 @@
 {% load static %}
 
 {% block style %}
-header {background-color:white;}
-body {background-image: url('{% static 'img/d2.jpg' %}'); background-repeat: no-repeat; background-attachment: fixed; background-size:auto 100%; background-position:center;}
-#event {background-color:rgb(238, 110, 18);}
-
-h1, h2, h3 {text-align:center; }
-h2 {margin-top:50px;}
-
-
-.block {width:100%; height:calc(100vh - 125px); overflow:hidden; background-image:url({{ article.img.url }}); background-position:center; background-size:100% auto; position:relative;background-repeat: no-repeat; background-color:black;}
-
-
-
-.block1 {box-sizing:border-box; border-width:20px 200px; border-style:solid; border-color:white; display:block; width:100%; overflow:hidden; float:left; background-color:white;}
-
-
-
-.sponser {display:block; width:80%; margin:auto; background-color:white;}
-
-
-
-.block2 {width:100%; display:block; background-color:white; box-sizing:border-box; border-width:20px 200px 20px 200px; border-style: solid; border-color:white; margin-top:0px;}
-
-
-
-
-.block3 {width:100%; display:block; background-color:white; box-sizing:border-box; border-width:20px 200px 20px 200px; border-style: solid; border-color:white; margin-top:150px;}
-
-
-
-.speaker {background-color:white; display:block; overflow:hidden;}
-.speaker>.container {width:100%; margin:auto; overflow:hidden;  }
-.speaker p {font-size: 18px; font-weight: bold; color: #125687;text-align:center;}
-.slidecontain {width:80%; height:200px; display:block; overflow:hidden; margin:auto; background-color:white;}
-.slide { height:200px; width:calc(224px * 6);}
-.slide>img { float:left; border:2px solid #ccc; margin:0px 10px; background: #f6f6f6; display:block; width:200px; height:200px;}
-.leftslide {animation-name:slider; animation-duration:10s; float:left;animation-iteration-count: infinite;animation-timing-function: linear;}
-@keyframes slider {
-from {margin-left:0px;}
-to {margin-left:calc(224px * -6);}
-}
-.slide:hover {animation-play-state: paused;}
-
-
-
-.block4 {width:100%; display:block; background-color:white; box-sizing:border-box; border-width:100px 200px 20px 200px; border-style: solid; border-color:white; margin-top:0px;}
-
-
-
-
-@media only screen and (max-width: 700px) {
-.block {height:200px;}
-.block1, .block2, .block3, .block4, .sponser {border-width:20px; width:100%;}
-
-}
+.slidecontainer {background-color:white;}
+.carouselcontainer {display:block; overflow:hidden; margin:auto; background-color:white; position:relative;}
+.carouselcontainer h2 {color:black; text-align:center;}
+.mycarousel {margin-left:0px; transition:all 1s;}
+.box {float:left; display:block; width:250px; overflow:hidden;}
+.box>img {padding:10px;}
+.box>h3 {text-align:center; color:black;}
+.carouselcontrol { height: 40px; width: 40px; border: 4px solid #FFFFFF; border-radius: 23px; position: absolute; font-size: 20px; color: #fff; text-align: center; text-shadow: 0 1px 2px rgba(0,0,0,.6); filter: alpha(opacity=50); opacity: .5;text-decoration: none; background-color:#222222; top:calc(50% - 20px);  box-sizing: border-box; cursor:pointer;}
+.left {left:-5px;}
+.right {right:-5px;}
 
 {% endblock %}
 
@@ -63,77 +19,138 @@ to {margin-left:calc(224px * -6);}
 
 {% block body %}
 
-<div class="block"></div>
+
+    <div data-bs-parallax-bg="true" id="carosel" style="height:500px;background-image:url(https://unsplash.it/1800/900?image=1051);background-position:center;background-size:cover;"></div>
+    <div class="contentcontainer"></div>
+    <div></div>
+    <div class="contentcontainer"></div>
 
 
 
 <div class="container">
 <div class="block1">
-<h1>{{ article.title }}</h1>
-<h3>{{ article.title2 }}</h3>
-<h3>{{ article.title3 }}</h3>
-<h2>{{ article.heading1 }}</h2>
+<h1 class=" text-center">{{ article.title }}</h1>
+<h3 class=" text-center">{{ article.title2 }}</h3>
+<h3 class=" text-center">{{ article.title3 }}</h3>
+<h2 class=" text-center">{{ article.heading1 }}</h2>
 {{ article.body1 | safe }}
 </div>
 </div>
 
 
 
-
-<div class="sponser">
-<div class='container'>
-<h2>SPONSERS</h2>
+<div>
+    <div class="container">
+        <h1 class="text-center">Sponsors</h1>
+        <div class="row">
+            <div class="col-md-3 text-center"><img class="img-fluid" src="http://via.placeholder.com/200" />
+                <p class="text-center">Name</p>
+            </div>
+            <div class="col-md-3 text-center"><img class="img-fluid" src="http://via.placeholder.com/200" />
+                <p class="text-center">Name</p>
+            </div>
+            <div class="col-md-3 text-center"><img class="img-fluid" src="http://via.placeholder.com/200" />
+                <p class="text-center">Name</p>
+            </div>
+            <div class="col-md-3 text-center"><img class="img-fluid" src="http://via.placeholder.com/200" />
+                <p class="text-center">Name</p>
+            </div>
+        </div>
+    </div>
 </div>
-<div class=''>
-<img src='http://via.placeholder.com/200' alt='image'>
-<img src='http://via.placeholder.com/200' alt='image'>
-<img src='http://via.placeholder.com/200' alt='image'>
-<img src='http://via.placeholder.com/200' alt='image'>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
 </div>
-</div>
 
-
-
-<div class="block2">
+<div class="block2 container">
 {{ article.body2 | safe }}
 </div>
 
 
 
-<div class="block3">
+	<div data-bs-parallax-bg="true" style="height: 500px;background-image: url(https://unsplash.it/1800/900?image=1051);background-position: center;background-size: cover;"></div>
+    <div class="contentcontainer"></div>
+    <div class="caroconainter"></div>
+    <div class="contentcontainer"></div>
+
+
+
+<div class="block3 container">
 {{ article.body3 | safe }}
 </div>
 
 
 
 
-<div id="logo" class="speaker">
-<div class='container'>
-<p>Our Speakers</p>
+<div class="slidecontainer">
+<div id="carouselcontainer" class="carouselcontainer">
+<a onclick="prev()" class="left carouselcontrol">‹</a>
+<a onclick="next()" class="right carouselcontrol">›</a>
+<h2>Speakers</h2>
+<div id="mycarousel" class="mycarousel">
+<div class="box">
+<img src="http://via.placeholder.com/250x250/FF0000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
 </div>
-<div class='slidecontain'>
-<div class='slide leftslide'>
-<img src='{{ article.speaker1.url }}' alt='image'>
-<img src='{{ article.speaker2.url }}' alt='image'>
-<img src='{{ article.speaker3.url }}' alt='image'>
-<img src='{{ article.speaker4.url }}' alt='image'>
-<img src='{{ article.speaker5.url }}' alt='image'>
-<img src='{{ article.speaker6.url }}' alt='image'>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/FF0000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
 </div>
-<div class='slide'>
-<img src='{{ article.speaker1.url }}' alt='image'>
-<img src='{{ article.speaker2.url }}' alt='image'>
-<img src='{{ article.speaker3.url }}' alt='image'>
-<img src='{{ article.speaker4.url }}' alt='image'>
-<img src='{{ article.speaker5.url }}' alt='image'>
-<img src='{{ article.speaker6.url }}' alt='image'>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/FF0000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/0000FF" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/0000FF" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/0000FF" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/008000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/008000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/008000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/000000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/000000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
+<div class="box">
+<img src="http://via.placeholder.com/250x250/000000" alt="Image" style="height:250px; width:250px;">
+<h3>Name</h3>
+</div>
 </div>
 </div>
 </div>
 
 
 
-<div class="block4">
+<div class="block4 container">
 {{ article.body4 | safe }}
 </div>
 
@@ -142,11 +159,39 @@ to {margin-left:calc(224px * -6);}
 
 
 <script>
+var slideimg = 3;
+if (window.matchMedia("(max-width: 758px)").matches) {slideimg = 1;} else {console.log("desktop");};
+console.log(slideimg);
+var numberofimg = document.getElementById('mycarousel').children.length;
+var boxwidth = document.getElementById('mycarousel').firstElementChild.clientWidth;
+var caroContainSize = (numberofimg * boxwidth);
+document.getElementById('mycarousel').style.width = caroContainSize + "px";
 
-setTimeout(function(){
+var currentwidth = (boxwidth * slideimg);
+document.getElementById('carouselcontainer').style.width = currentwidth + "px";
 
+var totalslides = caroContainSize / currentwidth;
+var slidenumber = 0;
+var count = 0;
 
-},2000); 
+function prev(){
+slidenumber--;
+if (slidenumber == -1) {slidenumber = totalslides - 1; console.log("reset done -"+ slidenumber);}
+console.log("clicked prev - "+ "and width set to "+ slidenumber);
+move();
+}
+
+function next(){
+slidenumber++;
+if (slidenumber == totalslides) {slidenumber = 0; console.log("reset done -"+ slidenumber);}
+move();
+console.log("clicked next - "+ "and width set to "+ slidenumber);
+}
+
+function move() {
+var setmargin = slidenumber * currentwidth;
+document.getElementById("mycarousel").style.marginLeft = -setmargin + "px";
+}
 
 </script>
 

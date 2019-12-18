@@ -24,7 +24,7 @@ try:
     with open('/home/ubuntu/key/nexrisepy/key') as f:
         SECRET_KEY = f.read().strip()
 except:
-    with open('C:/Users/msbar/Documents/git/nexrisepy.txt') as f:
+    with open('C:/Users/msbar/Documents/git/nexrisepy2/nexrisepy.txt') as f:
         SECRET_KEY = f.read().strip()
 
 
