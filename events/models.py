@@ -35,5 +35,46 @@ class Article(models.Model):
 	name6 = models.CharField(max_length=50, default='speaker name')
 	speaker6 = models.ImageField(upload_to='img/', default='http://via.placeholder.com/200')
 
+
+#	def __str__(self):
+#		return self.title
+
+
+class Article2(models.Model):
+	slug = models.SlugField(default='edit')
+	title = models.CharField(max_length=100, default='edit')
+	date = models.DateTimeField(auto_now_add=True)
+	prlxImg1 = models.ImageField(upload_to='img/', default='http://via.placeholder.com/1800x900')
+	event_title = models.TextField(null=True, blank=True)
+	event_date = models.DateTimeField(null=True, blank=True)
+	body1 = models.TextField(null=True, blank=True)
+	body2 = models.TextField(null=True, blank=True)
+	prlxImg2 = models.ImageField(upload_to='img/', default='http://via.placeholder.com/1800x900')
+	body3 = models.TextField(null=True, blank=True)
+	body4 = models.TextField(null=True, blank=True)
+
+
 	def __str__(self):
-		return self.title
+		return self.slug
+
+
+class SpeakerImg(models.Model):
+	slug = models.ForeignKey(Article2, on_delete=models.SET_NULL, null=True)
+	speaker_title = models.CharField(max_length=100, default='title')
+	speaker_img = models.ImageField(upload_to='img/', default='http://via.placeholder.com/200')
+	speaker_name = models.CharField(max_length=50, default='speaker name')
+
+
+	def __str__(self):
+		return self.slug.slug
+
+
+class SponsorImg(models.Model):
+	slug = models.ForeignKey(Article2, on_delete=models.SET_NULL, null=True)
+	sponsor_title = models.CharField(max_length=100, default='title')
+	sponsor_img = models.ImageField(upload_to='img/', default='http://via.placeholder.com/200')
+	sponsor_name = models.CharField(max_length=50, default='speaker name')
+
+
+	def __str__(self):
+		return self.slug.slug

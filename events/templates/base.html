@@ -58,7 +58,7 @@
 					<li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="{% url "events" %}">Events</a>
                         <div class="dropdown-menu" role="menu">
 							<a class="dropdown-item" role="presentation" href="{% url "events" %}">All Events</a>
-						{% for article in articles %}
+						{% for article in article_list %}
 						
 							<a class="dropdown-item" role="presentation" href="{% url 'article_detail' slug=article.slug %}">{{ article.title }}</a>
 						

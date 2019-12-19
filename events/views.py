@@ -1,36 +1,39 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Article
+from .models import Article2, SpeakerImg, SponsorImg
+
 
 # Create your views here.
 
 
 def index(request):
-	articles = Article.objects.all().order_by('-date')
-	return render(request, 'events/home.html', {'articles':articles})
+	article_list = Article2.objects.all().order_by('-date')
+	return render(request, 'events/home.html', {'article_list':article_list})
 
 def about(request):
-	articles = Article.objects.all().order_by('-date')
-	return render(request, 'events/about-us.html', {'articles':articles})
+	article_list = Article2.objects.all().order_by('-date')
+	return render(request, 'events/about-us.html', {'article_list':article_list})
 
 def events(request):
-	articles = Article.objects.all().order_by('-date')
-	return render(request, 'events/events.html', {'articles':articles})
+	article_list = Article2.objects.all().order_by('-date')
+	return render(request, 'events/events.html', {'article_list':article_list})
 
 def contacts(request):
-	articles = Article.objects.all().order_by('-date')
-	return render(request, 'events/contacts.html', {'articles':articles})
-
-def article(request):
-	articles = Article.objects.all().order_by('-date')
-	return render(request, 'events/article.html', {'articles':articles})
-
-def test(request):
-	articles = Article.objects.all().order_by('-date')
-	return render(request, 'events/test.html', {'articles':articles})
+	article_list = Article2.objects.all().order_by('-date')
+	return render(request, 'events/contacts.html', {'article_list':article_list})
 
 def article_detail(request, slug):
 	# return HttpResponse(slug)
-	articles = Article.objects.all().order_by('-date')
-	article = Article.objects.get(slug=slug)
-	return render(request, 'events/detail.html', {'article':article, 'articles':articles})
+	article_list = Article2.objects.all().order_by('-date') #This is for nav bar Important
+	article_link = Article2.objects.get(slug=slug)
+	speakers = SpeakerImg.objects.all().filter(slug__slug=slug)
+	sponsors = SponsorImg.objects.all().filter(slug__slug=slug)
+	return render(request, 'events/detail.html', {
+	'article_list':article_list,
+	'article_link':article_link,
+	'speakers':speakers,
+	'sponsors':sponsors,
+	})
+
+
+

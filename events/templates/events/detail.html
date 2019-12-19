@@ -20,7 +20,7 @@
 {% block body %}
 
 
-    <div data-bs-parallax-bg="true" id="carosel" style="height:500px;background-image:url(https://unsplash.it/1800/900?image=1051);background-position:center;background-size:cover;"></div>
+    <div data-bs-parallax-bg="true" id="carosel" style="height:500px; background-image:url({{ article_link.prlxImg1.url }})"></div>
     <div class="contentcontainer"></div>
     <div></div>
     <div class="contentcontainer"></div>
@@ -29,11 +29,9 @@
 
 <div class="container">
 <div class="block1">
-<h1 class=" text-center">{{ article.title }}</h1>
-<h3 class=" text-center">{{ article.title2 }}</h3>
-<h3 class=" text-center">{{ article.title3 }}</h3>
-<h2 class=" text-center">{{ article.heading1 }}</h2>
-{{ article.body1 | safe }}
+<h1 class=" text-center">{{ article_link.title | safe }}</h1>
+<h2 class=" text-center">{{ article_link.event_title | safe }}</h2>
+{{ article_link.body1 | safe }}
 </div>
 </div>
 
@@ -43,18 +41,13 @@
     <div class="container">
         <h1 class="text-center">Sponsors</h1>
         <div class="row">
-            <div class="col-md-3 text-center"><img class="img-fluid" src="http://via.placeholder.com/200" />
-                <p class="text-center">Name</p>
+            
+			{% for sponsor in sponsors %}
+			<div class="col-md-3 text-center"><img class="img-fluid" src="{{ sponsor.sponsor_img.url }}" />
+                <p class="text-center">{{ sponsor.sponsor_name }}</p>
             </div>
-            <div class="col-md-3 text-center"><img class="img-fluid" src="http://via.placeholder.com/200" />
-                <p class="text-center">Name</p>
-            </div>
-            <div class="col-md-3 text-center"><img class="img-fluid" src="http://via.placeholder.com/200" />
-                <p class="text-center">Name</p>
-            </div>
-            <div class="col-md-3 text-center"><img class="img-fluid" src="http://via.placeholder.com/200" />
-                <p class="text-center">Name</p>
-            </div>
+			{% endfor %}
+
         </div>
     </div>
 </div>
@@ -71,12 +64,12 @@
 </div>
 
 <div class="block2 container">
-{{ article.body2 | safe }}
+{{ article_link.body2 | safe }}
 </div>
 
 
 
-	<div data-bs-parallax-bg="true" style="height: 500px;background-image: url(https://unsplash.it/1800/900?image=1051);background-position: center;background-size: cover;"></div>
+	<div data-bs-parallax-bg="true" style="height: 500px;background-image: url({{ article_link.prlxImg2.url }});background-position: center;background-size: cover;"></div>
     <div class="contentcontainer"></div>
     <div class="caroconainter"></div>
     <div class="contentcontainer"></div>
@@ -84,7 +77,7 @@
 
 
 <div class="block3 container">
-{{ article.body3 | safe }}
+{{ article_link.body3 | safe }}
 </div>
 
 
@@ -96,54 +89,16 @@
 <a onclick="next()" class="right carouselcontrol">›</a>
 <h2>Speakers</h2>
 <div id="mycarousel" class="mycarousel">
+
+
+{% for speaker in speakers %}
 <div class="box">
-<img src="http://via.placeholder.com/250x250/FF0000" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
+<img src="{{ speaker.speaker_img.url }}" alt="Image" style="height:250px; width:250px;">
+<h3>{{ speaker.speaker_name }}</h3>
 </div>
-<div class="box">
-<img src="http://via.placeholder.com/250x250/FF0000" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
-</div>
-<div class="box">
-<img src="http://via.placeholder.com/250x250/FF0000" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
-</div>
-<div class="box">
-<img src="http://via.placeholder.com/250x250/0000FF" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
-</div>
-<div class="box">
-<img src="http://via.placeholder.com/250x250/0000FF" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
-</div>
-<div class="box">
-<img src="http://via.placeholder.com/250x250/0000FF" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
-</div>
-<div class="box">
-<img src="http://via.placeholder.com/250x250/008000" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
-</div>
-<div class="box">
-<img src="http://via.placeholder.com/250x250/008000" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
-</div>
-<div class="box">
-<img src="http://via.placeholder.com/250x250/008000" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
-</div>
-<div class="box">
-<img src="http://via.placeholder.com/250x250/000000" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
-</div>
-<div class="box">
-<img src="http://via.placeholder.com/250x250/000000" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
-</div>
-<div class="box">
-<img src="http://via.placeholder.com/250x250/000000" alt="Image" style="height:250px; width:250px;">
-<h3>Name</h3>
-</div>
+{% endfor %}
+
+
 </div>
 </div>
 </div>
@@ -151,9 +106,8 @@
 
 
 <div class="block4 container">
-{{ article.body4 | safe }}
+{{ article_link.body4 | safe }}
 </div>
-
 
 
 
